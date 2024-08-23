@@ -163,7 +163,6 @@ html {
     position: relative;
     color: #fff;
     overflow: hidden;
-    /* padding-top: 50px; */
 }
 
 #product-pot {
@@ -275,6 +274,9 @@ html {
 }
 
 /* PRODUTOS */
+#produtos {
+    padding-bottom: 100px;
+}
 
 #produtos .title {
     padding-bottom: 100px;
@@ -396,12 +398,30 @@ html {
     font-size: 1.2rem;
 }
 
-.icon-pagamento .fa-solid {
+.informacoes-pagamento {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #fff;
+    width: 950px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 80px;
+    color: #fff;
+}
+
+.informacoes-pagamento p {
+    text-transform: uppercase;
+}
+
+.icon-pagamento i {
     background: none;
     color: #fff !important;
-    font-size: 1rem;
+    font-size: 2rem !important;
     border-radius: 0;
     margin-bottom: 0;
     padding: 0;
     display: block;
+    padding-bottom: 20px !important;
 }
