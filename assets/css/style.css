@@ -430,10 +430,24 @@ html {
     margin: 5px;
 }
 
-.garantia {
+.garantia.container {
     display: flex;
-    justify-content: center;
-    padding-top: 80px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebrar a linha no modo responsivo */
+}
+
+.garantia-img {
+    flex: 1;
+}
+
+.garantia .title {
+    padding-bottom: 40px !important;
+}
+
+.garantia-text {
+    flex: 2;
+    padding-left: 20px;
 }
 
 .garantia-paragraph {
@@ -441,6 +455,22 @@ html {
     font-size: 1.5rem;
 }
 
-.garantia .title {
-    padding-bottom: 40px !important;
+.contato {
+    text-align: center;
+}
+
+.fa-whatsapp {
+    color: #25d366;
+    font-size: 70px;
+}
+
+.footer {
+    color: #fff;
+    text-align: center;
+    background-color: #00d1d4;
+    padding: 10px;
+}
+
+.footer p {
+    margin: 0;
 }

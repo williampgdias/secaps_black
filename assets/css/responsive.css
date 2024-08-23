@@ -6,6 +6,15 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .garantia-paragraph {
+        font-size: 1.3rem;
+    }
+    .garantia-img img {
+        max-width: 400px;
+    }
+}
+
 @media (max-width: 991px) {
     .logo {
         width: 80px;
@@ -15,6 +24,37 @@
         width: 550px;
         bottom: 10%;
         right: -12%;
+    }
+
+    .garantia-paragraph {
+        font-size: 1.3rem;
+    }
+
+    .garantia-text {
+        order: 1;
+    }
+
+    .garantia-img {
+        order: 2;
+    }
+
+    .garantia-paragraph {
+        order: 3;
+    }
+
+    .garantia.container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .garantia .title {
+        padding: 0;
+        padding-bottom: 40px !important;
+    }
+
+    .garantia-img img {
+        max-width: 350px;
     }
 }
 
