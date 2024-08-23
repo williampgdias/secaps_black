@@ -399,12 +399,11 @@ html {
 }
 
 .informacoes-pagamento {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    /* gap: 20px; */
     color: #fff;
-    width: 950px;
+    max-width: 950px;
     text-align: center;
     margin: 0 auto;
     margin-top: 80px;
@@ -424,4 +423,24 @@ html {
     padding: 0;
     display: block;
     padding-bottom: 20px !important;
+}
+
+.informacoes-pagamento-box {
+    flex: 1 1 calc(33.33% - 10px);
+    margin: 5px;
+}
+
+.garantia {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.garantia-paragraph {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.garantia .title {
+    padding-bottom: 40px !important;
 }
