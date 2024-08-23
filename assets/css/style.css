@@ -253,6 +253,7 @@ html {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    margin-bottom: 50px;
 }
 
 .card-videos {
@@ -265,4 +266,11 @@ html {
     height: auto;
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
+}
+
+.carousel {
+    max-width: 650px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
