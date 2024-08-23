@@ -34,18 +34,12 @@
         overflow: visible;
     }
 
-    #product-pot {
-        display: none;
+    .card:hover {
+        transform: none;
     }
 
-    .quem-somos::after {
-        content: url('assets/img/um_pote.png');
-        position: absolute;
-        bottom: 5%;
-        right: 0;
-        width: 250px;
-        opacity: 0.8;
-        z-index: 2;
+    #product-pot {
+        display: none;
     }
 
     .quem-somos .paragraph {
