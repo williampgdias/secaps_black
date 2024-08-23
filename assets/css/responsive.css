@@ -1,6 +1,18 @@
+@media (max-width: 1633px) {
+    #product-pot {
+        width: 300px;
+        bottom: 20%;
+    }
+}
+
 @media (max-width: 991px) {
     .logo {
         width: 80px;
+    }
+
+    #product-pot {
+        width: 300px;
+        bottom: 10%;
     }
 }
 
@@ -95,6 +107,10 @@
     .segredo .card {
         width: 100%;
         height: auto;
+    }
+
+    .card-video {
+        opacity: 1;
     }
 
     .card-videos {
