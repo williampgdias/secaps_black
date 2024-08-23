@@ -168,10 +168,10 @@ html {
 
 #product-pot {
     position: absolute;
-    bottom: 5%;
-    right: 0;
+    bottom: 20%;
+    right: -5%;
     transform: translateY(0%);
-    width: 450px;
+    width: 700px;
 }
 
 .animate-pot {

@@ -1,7 +1,8 @@
 @media (max-width: 1633px) {
     #product-pot {
-        width: 300px;
+        width: 450px;
         bottom: 20%;
+        right: -7%;
     }
 }
 
@@ -11,8 +12,9 @@
     }
 
     #product-pot {
-        width: 300px;
+        width: 550px;
         bottom: 10%;
+        right: -12%;
     }
 }
 
