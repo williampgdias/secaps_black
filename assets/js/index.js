@@ -1,76 +1,86 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Código para a animação do pote na seção 'Quem Somos'
     const productPot = document.getElementById('product-pot');
     const quemSomosSection = document.getElementById('quem-somos');
-
-    function animatePot() {
-        productPot.classList.remove('animate-pot'); // Remove a classe para reiniciar a animação
-        void productPot.offsetWidth; // Força o reflow para permitir a reinicialização da animação
-        productPot.classList.add('animate-pot'); // Adiciona novamente a classe de animação
-    }
-
-    // Configuração do Intersection Observer para a seção 'Quem Somos'
-    const observerQuemSomos = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    animatePot(); // Reinicia a animação quando a seção entra na viewport
-                }
-            });
-        },
-        { threshold: 0.1 }
-    );
-
-    // Começa a observar a seção 'Quem Somos'
-    observerQuemSomos.observe(quemSomosSection);
-
-    // Código para a animação dos vídeos na seção de depoimentos
     const videos = document.querySelectorAll('.card-video');
-    const depoimentosSection = document.querySelector('#depoimentos');
+    const depoimentosSection = document.getElementById('depoimentos');
 
-    // Função para reiniciar a animação dos vídeos
-    function animateVideos() {
-        // Verifica se a tela é maior que 576px antes de aplicar a animação
-        if (window.innerWidth > 576) {
-            videos.forEach((video) => {
-                video.style.opacity = 0; // Torna o vídeo invisível
-                video.classList.remove('animate__fadeInLeftBig'); // Remove a classe de animação
-            });
+    // Função para animações
+    const animateElement = (element, animationClass) => {
+        element.classList.remove(animationClass);
+        void element.offsetWidth; // Força o reflow para reiniciar a animação
+        element.classList.add(animationClass);
+    };
 
-            setTimeout(() => {
-                videos.forEach((video, index) => {
-                    setTimeout(() => {
-                        video.style.opacity = 1; // Torna o vídeo visível
-                        video.classList.add('animate__fadeInLeftBig'); // Adiciona a classe de animação
-                    }, (videos.length - 1 - index) * 500);
-                });
-            }, 100);
+    // Função de observer genérica
+    const createObserver = (element, callback) => {
+        if (element) {
+            new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) callback();
+                    });
+                },
+                { threshold: 0.1 }
+            ).observe(element);
         }
+    };
+
+    // Animação do pote
+    if (productPot && quemSomosSection) {
+        createObserver(quemSomosSection, () =>
+            animateElement(productPot, 'animate-pot')
+        );
     }
 
-    // Configuração do Intersection Observer para a seção de depoimentos
-    const observerDepoimentos = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    animateVideos();
-                }
+    // Animação dos vídeos
+    const animateVideos = () => {
+        if (window.innerWidth > 576) {
+            videos.forEach((video, index) => {
+                video.style.opacity = 0;
+                video.classList.remove('animate__fadeInLeftBig');
+                setTimeout(() => {
+                    video.style.opacity = 1;
+                    video.classList.add('animate__fadeInLeftBig');
+                }, (videos.length - 1 - index) * 500);
             });
-        },
-        { threshold: 0.1 }
-    );
+        } else {
+            videos.forEach((video) => (video.style.opacity = 1));
+        }
+    };
 
-    // Começa a observar a seção de depoimentos
-    observerDepoimentos.observe(depoimentosSection);
+    if (depoimentosSection) {
+        createObserver(depoimentosSection, animateVideos);
+    }
 
-    // Código para pausar outros vídeos quando um novo é reproduzido
+    // Pausa outros vídeos ao iniciar a reprodução
     videos.forEach((video) => {
-        video.addEventListener('play', function () {
+        video.addEventListener('play', () => {
             videos.forEach((v) => {
-                if (v !== video) {
-                    v.pause();
+                if (v !== video) v.pause();
+            });
+        });
+    });
+
+    // Função de acorde (accordion)
+    document.querySelectorAll('.accordion-header').forEach((acc) => {
+        acc.addEventListener('click', function () {
+            // Fecha todos os painéis, exceto o atual
+            document.querySelectorAll('.accordion-content').forEach((panel) => {
+                if (panel !== this.nextElementSibling) {
+                    panel.style.maxHeight = null;
+                    panel.previousElementSibling.classList.remove('active');
                 }
             });
+
+            // Alterna o painel atual
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
         });
     });
 });
