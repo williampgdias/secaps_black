@@ -456,26 +456,6 @@ html {
     font-size: 1.5rem;
 }
 
-.contato {
-    text-align: center;
-}
-
-.fa-whatsapp {
-    color: #25d366;
-    font-size: 70px;
-}
-
-.footer {
-    color: #fff;
-    text-align: center;
-    background-color: #00d1d4;
-    padding: 10px;
-}
-
-.footer p {
-    margin: 0;
-}
-
 /* Accordion */
 .accordion-container {
     margin-top: 40px;
@@ -543,4 +523,124 @@ html {
 
 .accordion-content.show {
     max-height: 1000px; /* Ajuste conforme o conteúdo */
+}
+
+/* Footer */
+/* .footer {
+    color: #fff;
+    text-align: center;
+    background-color: #00d1d4;
+    padding: 10px;
+}
+
+.footer p {
+    margin: 0;
+} */
+.footer-arrow {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.footer-arrow svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 30px;
+    background-color: #02ceb8;
+}
+
+.footer-arrow .shape-fill {
+    fill: #000;
+}
+
+.main_footer {
+    color: #fff;
+    font-size: 1rem;
+}
+.main_footer .content {
+    float: left;
+    width: 80%;
+    margin: 0 10%;
+    padding: 5em 0;
+}
+
+.colfooter {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.colfooter ul {
+    width: 100%;
+    float: left;
+}
+.colfooter ul li {
+    padding: 0.2em 0em;
+}
+.colfooter ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+.colfooter ul li a i {
+    font-size: 0.5em;
+}
+.colfooter ul li a:hover {
+    color: #00d1d4;
+}
+.colfooter .titleFooter {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3em;
+    color: #ffffff;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px #27b385 solid;
+}
+
+.colfooter p {
+    color: #ffffff;
+    font-size: 1em;
+    height: 25px;
+}
+.main_footer_copy {
+    background-color: #01a26d;
+    width: 100%;
+    float: left;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    padding: 1.5em 0em;
+}
+.main_footer_copy p {
+    font-size: 1em;
+    color: #ffffff;
+    height: 20px;
+}
+.main_footer_copy .m-b-footer {
+    margin-bottom: 0.5em;
+}
+.main_footer_copy .by {
+    font-size: 0.96em;
+}
+.main_footer_copy .by a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.main_footer_copy .by i {
+    font-size: 0.96em;
+    margin-right: 3px;
+    color: #e82626;
+}
+
+.fa-whatsapp,
+.fa-facebook {
+    color: #25d366;
+    font-size: 2.4rem;
+}
+
+.fa-facebook {
+    font-size: 2.4rem;
 }
