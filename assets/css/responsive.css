@@ -164,4 +164,13 @@
     .card-img-top {
         width: 120px;
     }
+    .footer-list {
+        display: block;
+    }
+    .menu-rastreamento {
+        display: block;
+    }
+    .suporte {
+        padding-bottom: 30px;
+    }
 }
